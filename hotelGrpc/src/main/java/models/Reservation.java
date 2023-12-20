@@ -8,7 +8,7 @@ public class Reservation {
 		/* ATTRIBUTES */
 	@Id
 	@GeneratedValue
-	private int id;
+	private  int id;
 	private LocalDate date_arrive;
 	private LocalDate date_depart;
 	@ManyToOne

@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EntityScan(basePackages = {"models"})
 @EnableJpaRepositories(basePackages = {"repositories"})
-@SpringBootApplication(scanBasePackages = {"data","exceptions","controllers"})
-public class HotelRestApplication {
+@SpringBootApplication(scanBasePackages = {"data","exceptions","controllers","services"})
+public class AgenceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HotelRestApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AgenceApplication.class, args);
+    }
 
 }
