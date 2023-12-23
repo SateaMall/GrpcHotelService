@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ProtoServices;
+
+// The service definition.
+service Reserver {
+  // Returns IdReservation
+  rpc affiche (ResRequest) returns (Reponse) {}
+}
+
+// The request message containing the searching details
+message ResRequest {
+  uint64 offreId=1;
+  string nomClient=2;
+  string prenomClient=3;
+  string portable=4;
+  int32 creditCard=5;
+}
+
+// The response message containing a reservation Id or -1 (error)
+message Reponse {
+  int32 id=1;
+}

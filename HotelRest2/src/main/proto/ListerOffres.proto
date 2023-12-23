@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ProtoServices;
+
+// The service definition.
+service ListerOffres {
+  // Returns offres
+  rpc affiche (OffreRequest) returns (OffresListes) {}
+}
+
+// The request message containing the searching details
+message OffreRequest {
+  string dateDebut=1;
+  string dateFin=2;
+  int32 nbrPersonne=3;
+}
+
+// The response message containing a list of offers
+message OffresListes {
+  repeated Offre offres=1;
+}
+
+message Offre {
+  int64 id = 1;
+  int32 capacite = 2;
+  double prix = 3;
+  string dateArrive = 4;     // LocalDate represented as string
+  string dateDepart = 5;     // LocalDate represented as string
+  int64 chambreId = 6;
+  int64 hotelId = 7;
+  string nomHotel = 8;
+  int32 etoileHotel = 9;
+}
